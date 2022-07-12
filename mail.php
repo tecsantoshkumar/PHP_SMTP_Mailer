@@ -13,13 +13,13 @@ if (isset($_POST['subject']) && isset($_POST['email']) && isset($_POST['query'])
     include('smtp/PHPMailerAutoload.php');
     $mail = new PHPMailer(true);
     $mail->isSMTP();
-    $mail->Host = "smtp.dreamhost.com";
-    $mail->Port = 465;
+    $mail->Host = "smtp.dreamhost.com"; //Hosting
+    $mail->Port = 465; // Hostinng Port
     $mail->SMTPSecure = "ssl";
     $mail->SMTPAuth = true;
-    $mail->Username = "admin@mvitr.com";
-    $mail->Password = "mvitr@dream";
-    $mail->SetFrom("admin@mvitr.com");
+    $mail->Username = "YOUR_USER_NAME";
+    $mail->Password = "YOUR_PASSWORD";
+    $mail->SetFrom("YOUR_SEND_USER_NAME");
     $mail->addAddress($email);
     $mail->IsHTML(true);
     $mail->Subject = $subject;
